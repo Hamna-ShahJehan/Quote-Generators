@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        body {
+            background: rgb(55, 53, 228);
+            background: linear-gradient(90deg,
+                    rgba(55, 53, 228, 1) 0%,
+                    rgba(107, 107, 235, 1) 82%);
+        }
+
+        .container {
+            width: 400px;
+            height: 200px;
+            background-color: aliceblue;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(27, 22, 118, 0.3);
+            width: auto;
+        }
+
+        .container p {
+            font-size: 24px;
+            margin: 20px;
+            text-align: center;
+            width: auto;
+        }
+
+        .container button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 20px;
+            background-color: blue;
+            color: white;
+        }
+
+        /* .container button:hover {
+            background-color: white;
+            border: 1px solid blue;
+            color: blue;
+            transform: scale(0.95);
+
+        } */
+
+        .container p {
+            margin-bottom: 20px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <p>Practice makes a man perfect</p>
+        <button>Next</button>
+    </div>
+
+    <script>// Variables
+        let quote = document.querySelector("p");
+        let button = document.querySelector("button");
+
+        // Logic
+        let quotations = [
+            "Practice makes a man Perfect",
+            "Good things takes time",
+            "Hard work is key to success",
+            "Believe in yourself and all that you are",
+            "Success is not final, failure is not fatal. It is the courage to continue that counts.",
+            "Don't watch the clock; do what it does. Keep going",
+            "The only way to do great work is to love what you do",
+            "Your limitation—it's only your imagination",
+            "Push yourself, because no one else is going to do it for you",
+            "Dream it. Wish it. Do it",
+            "Great things never come from comfort zones",
+        ];
+
+        // A curated list of sophisticated colors that look great on 'aliceblue'
+        let colors = [
+            "rgb(55, 53, 228)",   /* Your original vibrant blue */
+            "rgb(124, 58, 237)",  /* Violet */
+            "rgb(219, 39, 119)",  /* Pink */
+            "rgb(5, 150, 105)",   /* Emerald Green */
+            "rgb(217, 119, 6)",/* Amber/Orange */
+            "rgb(16, 185, 129)",  /* Teal */
+            "rgb(67, 56, 202)",   /* Indigo */
+            "rgb(244, 63, 94)",   /* Red-Pink */
+            "rgb(34, 197, 94)",   /* Green */
+            "rgb(255, 99, 71)",   /* Tomato Red */
+            "rgb(255, 165, 0)",   /* Orange */
+
+        ];
+
+        const generateQuote = () => {
+            let randomQuoteIndex = Math.floor(Math.random() * quotations.length);
+            let randomColorIndex = Math.floor(Math.random() * colors.length);
+            let selectedColor = colors[randomColorIndex];
+            // Update content
+            quote.innerHTML = quotations[randomQuoteIndex];
+            quote.style.color = selectedColor;
+            button.style.backgroundColor = selectedColor;
+        };
+
+        // Event Listener
+        button.addEventListener("click", generateQuote);</script>
+</body>
+
+</html>
